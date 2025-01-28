@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yogendra Mishra - Portfolio</title>
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f8f9fa;
+            color: #161313;
+        }
+        header {
+            background: linear-gradient(135deg, #e100ff, #00d4ff);
+            color: white;
+            padding: 2rem 1rem;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            margin: 0 0 0 170px;
+        }
+        header p {
+            font-size: 1.2rem;
+            margin: 0.5rem 0 0 170px;
+        }
+        header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            position: absolute;
+            top: 50%;
+            left: 2rem;
+            transform: translateY(-50%);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        nav {
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: #b700ff;
+            margin: 0 1rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #8000b3;
+        }
+        .container {
+            padding: 2rem;
+            text-align: center;
+        }
+        .btn {
+            display: inline-block;
+            background: #cc00ff;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: background 0.3s ease;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #f1f1f1;
+            margin-top: 2rem;
+        }
+        .dynamic-section {
+            text-align: left;
+            margin: 2rem auto;
+            max-width: 800px;
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 1.5rem;
+        }
+        .dynamic-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: #007bff;
+            margin-bottom: 1rem;
+        }
+        .dynamic-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .dynamic-section ul li {
+            margin-bottom: 0.8rem;
+        }
+        .dynamic-section ul li strong {
+            color: #007bff;
+        }
+        .skills-section {
+            text-align: left;
+            margin: 2rem auto;
+            max-width: 800px;
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 1.5rem;
+        }
+        .skills-section ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+        .skills-section ul li {
+            background: #007bff;
+            color: rgb(255, 255, 255);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="profile-section">
+            <img src="imgg.jpg" alt="Profile Picture" style="width: 100px; height: 100px;">
+           
+            </div>
+        </div>
+        <script type="text/babel"></script>
+        <h1 style="margin-left: 200px;">YOGENDRA MISHRA</h1>
+        <p>Motivated Developer | Problem Solver | Tech Enthusiast</p>
+    </header>
+    <nav>
+        <a href="#summary">Summary</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#skills">Skills</a>
+    </nav>
+    <div class="container">
+        <h2 class="animated-heading">Welcome to My Portfolio!</h2>
+        <div id="root"></div>
+        <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <script type="text/babel">
+            const AnimatedHeading = () => {
+                const [visible, setVisible] = React.useState(false);
+
+                React.useEffect(() => {
+                    setTimeout(() => setVisible(true), 500);
+                }, []);
+
+                return (
+                    <h2 className={`animated-heading ${visible ? 'visible' : ''}`}>
+                        Welcome to My Portfolio!
+                    </h2>
+                );
+            };
+
+            ReactDOM.render(<AnimatedHeading />, document.getElementById('root'));
+        </script>
+        <style>
+            .animated-heading {
+                opacity: 0;
+                transform: translateY(-20px);
+                transition: opacity 2s ease-in-out, transform 2s ease-in-out;
+            }
+            .animated-heading.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        </style>
+        <style>
+            .animated-heading {
+            animation: fadeIn 2s ease-in-out;
+            }
+            @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            }
+        </style>
+        <p>Explore my skills, projects, and experiences as I continue my journey in the world of technology.</p>
+        <a href="#summary" class="btn">Learn More About Me</a>
+    </div>
+    <div id="summary" class="dynamic-section">
+        <h2>Professional Summary</h2>
+        <p>Motivated developer with strong coding skills and a passion for problem-solving. Skilled in creating effective solutions for modern challenges.</p>
+    </div>
+    <div id="experience" class="dynamic-section">
+        <h2>Internship/Experience</h2>
+        <ul>
+            <li><strong>CodeEternity (July 2024 - Dec 2025):</strong> Conducted automated testing using Selenium, collaborated with the development team, and improved testing processes.</li>
+            <li><strong>DigiPodium (Jan 2023 - May 2023):</strong> Conducted data analysis and developed an interactive communication platform for individuals with disabilities.</li>
+        </ul>
+    </div>
+    <div id="projects" class="dynamic-section">
+        <h2>Projects</h2>
+        <ul>
+            <li><strong>Interactive Communication for Specially Able Person Using AI:</strong> Developed a user-friendly platform utilizing speech recognition and synthesis for real-time interaction.</li>
+            <li><strong>WhatsApp Chat Analysis Using Python:</strong> Analyzed chat patterns and visualized insights using Python and data science libraries.</li>
+            <li><strong>Book Recommendation System Using Machine Learning:</strong> Built a personalized book recommendation system leveraging ML algorithms.</li>
+        </ul>
+    </div>
+    <div id="certificates" class="dynamic-section">
+        <h2>Certificates</h2>
+        <ul>
+            <li>AI-ML Virtual Internship by Google for Developers</li>
+            <li>SQL for Data Science by University of California</li>
+            <li>IBM Cloud Essentials V3 Issued by Cognitive Class</li>
+            <li>Python and Data Science by DigiPodium</li>
+        </ul>
+    </div>
+    <div id="skills" class="skills-section">
+        <h2>Technical Skills</h2>
+        <ul>
+            <li>Python</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>C</li>
+            <li>SQL</li>
+        </ul>
+    </div>
+    <footer>
+        &copy; 2025 Yogendra Mishra. All Rights Reserved.
+    </footer>
+</body>
+</html>
