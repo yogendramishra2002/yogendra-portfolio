@@ -1,0 +1,1 @@
+I am a Master's student in Computer Applications (MCA) at Galgotias University with expertise in C, C++, Java, Python, and SQL. I enjoy solving complex problems and building efficient applications. My interests include software development, web development, and machine learning. This GitHub showcases my personal projects, academic work, and contributions to open-source software.
